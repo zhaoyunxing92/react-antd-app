@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Login from './pages/login';
+import ProjectList from './pages/admin/project/list';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Switch>
+      <Route path="/login" component={Login} />
+      <Route path="/admin/project" component={ProjectList} />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
